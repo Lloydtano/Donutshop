@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Donuts</title>
+    
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url( homepagebg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 15px 30px;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    padding: 10px;
+    gap: 20px;
+    z-index: 1000;
+}
+
+/* Dropdown columns */
+.menu-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-column a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-column img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.signup-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.signup-btn:hover {
+    background-color: rgb(199, 10, 10);
+}
+
+/* Form styles */
+.form-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.form-container button:hover {
+    background-color: darkred;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+.section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.section button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.section button:hover {
+    background-color: darkred;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Our Donuts </a>
+                <div class="dropdown-content">
+                    <div class="menu-column">
+                        <a href="#Baconinthesun" target="_blank"><img src="bacon.png" alt=""> Bacon in the Sun</a>
+                        <a href="#Beachball" target="_blank"><img src="beachball.png" alt=""> Beach ball</a>
+                        <a href="#Chocolatexplosion"target="_blank"><img src="Chocolateexplosion.png" alt=""> Chocolate Explosion</a>
+                    </div>
+                    <div class="menu-column">
+                        <a href="#Blueberrylemonade" target="_blank"><img src="Blueberrylemonade.jpg" alt=""> Blueberry Lemonade</a>
+                        <a href="#Blueberrypancake"><img src="blueberry-pancake.png" alt=""> Blueberry Pancake</a>
+                        <a href="#Frenchtoast"><img src="french-toast.png" alt=""> French toast</a>
+                    </div>
+                    <div class="menu-column">
+                        <a href="#Chocolatecover"><img src="chocolate-covered-strawberry.png" alt=""> Chocolate Strawberry</a>
+                        <a href="#Chocolatepeanut"><img src="chocolate-with-peanuts-and-salted-caramel.png" alt=""> Chocolate with peanuts</a>
+                        <a href="#Coconutisland"><img src="coconut-island-bliss.png" alt=""> Coconut Island</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Special Offers </a>
+                <div class="dropdown-content">
+                    <div class="menu-column">
+                        <a href="#"><img src="chocolate.jpg" alt=""> Chocolate Donuts</a>
+                        <a href="#"><img src="classic_donut.png" alt=""> Classic Donuts</a>
+                        <a href="#"><img src="sprinkled_donut.png" alt=""> Sprinkled Donuts</a>
+                    </div>
+                    <div class="menu-column">
+                        <a href="#"><img src="glazed_donut.png" alt=""> Glazed Donuts</a>
+                        <a href="#"><img src="filled_donut.png" alt=""> Filled Donuts</a>
+                        <a href="#"><img src="drinks.png" alt=""> Drinks & Beverages</a>
+                    </div>
+                    <div class="menu-column">
+                        <a href="#"><img src="combo_meal.png" alt=""> Combo Meals</a>
+                        <a href="#"><img src="family_pack.png" alt=""> Family Pack</a>
+                        <a href="#"><img src="desserts.png" alt=""> Desserts</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="signup-btn" onclick="document.getElementById('signup-form').style.display='block'">Sign Up</button>
+    </nav>
+
+    <div id="signup-form" class="form-container" style="display: none;">
+        <h2>Register now</h2>
+        <p>Stay updated on our latest offers and news!</p>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Zip Code" required>
+        <button><a href="#Thankyou" target="_blank">Sign Up</a></button>
+    </div>
+    </nav>
+    
+    
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const signupBtn = document.querySelector(".signup-btn");
+            const formContainer = document.getElementById("signup-form");
+    
+            signupBtn.addEventListener("click", function () {
+                formContainer.style.display = "block";
+    
+                // Reset form fields
+                const inputs = formContainer.querySelectorAll("input");
+                inputs.forEach(input => input.value = "");
+            });
+    
+            // Close form when clicking outside of it
+            window.addEventListener("click", function (event) {
+                if (event.target === formContainer) {
+                    formContainer.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
